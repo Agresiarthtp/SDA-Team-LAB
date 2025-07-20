@@ -38,11 +38,19 @@ public class QueueManager {
     }
 
     void display() {
-        Node temp = front;
-        while (temp != null) {
-            System.out.print(temp.data + "->");
-            temp = temp.next;
+        if (front == null) {
+            System.out.println("Antrian kosong");
+            return;
         }
-        System.out.print("Antrian habis\n");
+
+        Node temp = front;
+        System.out.println("\nDaftar Antrian:");
+        int urutan = 1;
+        while (temp != null) {
+            System.out.println(urutan + ". " + temp.data);
+            temp = temp.next;
+            urutan++;
+        }
+        System.out.println("Total antrian: " + (urutan - 1));
     }
 }
